@@ -22,6 +22,13 @@ spring:
 initializr:
   env:
     boms:
+      camel-bom:
+        groupId: org.apache.camel
+        artifactId: camel-spring-boot-dependencies
+        versionProperty: camel.version
+        mappings:
+          - versionRange: "[1.4.0.RELEASE,2.0.0.M1)"
+            version: 2.19.0
       cloud-bom:
         groupId: org.springframework.cloud
         artifactId: spring-cloud-dependencies
@@ -1036,9 +1043,9 @@ initializr:
           id: camel
           versionRange: "[1.4.0.RELEASE,2.0.0.M1)"
           description: Integration using Apache Camel
+          bom: camel-bom
           groupId: org.apache.camel
           artifactId: camel-spring-boot-starter
-          version: 2.19.0
         - name: JMS (ActiveMQ)
           id: activemq
           description: Java Message Service API via Apache ActiveMQ
